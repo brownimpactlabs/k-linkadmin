@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>K-LinK 케이링크 행정사사무소</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1B2A4A;
+      --navy2: #243557;
+      --cream: #F5F0E8;
+      --cream2: #FAFAF7;
+      --orange: #C8601A;
+      --orange2: #E07030;
+      --gold: #B8956A;
+      --mid: #5A6478;
+      --light: #9AA3B2;
+      --border: #E2DACE;
+      --white: #FFFFFF;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      color: var(--navy);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      display: flex;
+      min-height: 100vh;
+      flex-wrap: wrap;
+      /* for mobile */
+    }
+
+    .hero-left {
+      flex: 1;
+      min-width: 320px;
+      padding: 5rem 4rem;
+      background: var(--navy);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.93rem;
+      letter-spacing: 0.25em;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-eyebrow-line {
+      width: 28px;
+      height: 1px;
+      background: var(--orange);
+    }
+
+    .hero-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: clamp(2.2rem, 3.8vw, 3.5rem);
+      font-weight: 700;
+      color: white;
+      line-height: 1.4;
+      margin-bottom: 1.8rem;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-desc {
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.9;
+      font-weight: 300;
+      border-left: 2px solid var(--orange);
+      padding-left: 1.5rem;
+      margin-bottom: 4rem;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-hero-primary {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: var(--orange);
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 1.1rem 2.2rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-hero-primary:hover {
+      background: var(--orange2);
+      transform: translateY(-2px);
+    }
+
+    .btn-hero-secondary {
+      display: flex;
+      align-items: center;
+      background: transparent;
+      color: rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 1.1rem 2.2rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .btn-hero-secondary:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: white;
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .hero-bottom-info {
+      margin-top: 5rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.65rem;
+      color: rgba(255, 255, 255, 0.25);
+      letter-spacing: 0.1em;
+    }
+
+    .hero-bottom-info-line {
+      width: 25px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    /* 오른쪽 */
+    .hero-right {
+      flex: 1;
+      min-width: 320px;
+      background: var(--cream2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 6rem 4.5rem;
+      position: relative;
+      border-left: 1px solid var(--border);
+    }
+
+    .hero-bg-text {
+      position: absolute;
+      top: 4rem;
+      right: 4rem;
+      font-family: 'Noto Serif KR', serif;
+      font-size: 14rem;
+      color: rgba(0, 0, 0, 0.03);
+      line-height: 1;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .right-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-size: 0.98rem;
+      letter-spacing: 0.25em;
+      color: var(--orange);
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .right-eyebrow-line {
+      width: 24px;
+      height: 1px;
+      background: var(--orange);
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+      background: white;
+      position: relative;
+      z-index: 2;
+    }
+
+    .s-card {
+      padding: 2.8rem 2.2rem;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      display: block;
+      transition: all 0.3s;
+      background: white;
+    }
+
+    .s-card:hover {
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.06);
+      transform: translateY(-2px);
+      position: relative;
+      z-index: 3;
+    }
+
+    .s-card svg {
+      margin-bottom: 1.8rem;
+      stroke: var(--mid);
+      width: 24px;
+      height: 24px;
+    }
+
+    .s-card:hover svg {
+      stroke: var(--orange);
+    }
+
+    .s-card-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+    }
+
+    .s-card-desc {
+      font-size: 0.75rem;
+      color: var(--mid);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid var(--navy);
+      margin-top: 3rem;
+      background: transparent;
+      position: relative;
+      z-index: 2;
+    }
+
+    .stat-item {
+      padding: 1.8rem 1rem;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid rgba(27, 42, 74, 0.1);
+    }
+
+    .stat-item:last-child {
+      border-right: none;
+    }
+
+    .stat-num {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-num span {
+      font-size: 1rem;
+      font-weight: 400;
+      margin-left: 2px;
+      vertical-align: super;
+    }
+
+    .stat-text {
+      font-size: 0.75rem;
+      color: var(--mid);
+      font-weight: 400;
+    }
+
+    /* ── 업무분야 ── */
+    .works {
+      padding: 6rem 3rem;
+      background: var(--cream2);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.6rem;
+      letter-spacing: 0.28em;
+      color: var(--orange);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+    }
+
+    .section-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.45;
+      margin-bottom: 0.7rem;
+    }
+
+    .section-title em {
+      font-style: normal;
+      color: var(--orange);
+    }
+
+    .section-sub {
+      font-size: 0.83rem;
+      color: var(--mid);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .work-card {
+      background: white;
+      padding: 2.2rem 1.5rem;
+      text-align: center;
+      transition: all 0.3s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .work-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--orange);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.3s;
+    }
+
+    .work-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    }
+
+    .work-card:hover::after {
+      transform: scaleX(1);
+    }
+
+    .work-icon-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(200, 96, 26, 0.08);
+      border: 1px solid rgba(200, 96, 26, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      transition: all 0.3s;
+    }
+
+    .work-card:hover .work-icon-wrap {
+      background: var(--orange);
+      border-color: var(--orange);
+    }
+
+    .work-card:hover .work-icon-wrap svg {
+      stroke: white;
+    }
+
+    .work-name {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+      line-height: 1.4;
+    }
+
+    .work-desc {
+      font-size: 0.7rem;
+      color: var(--mid);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* ── WHY ── */
+    .why {
+      padding: 6rem 3rem;
+      background: var(--white);
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .why-card {
+      border: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    .why-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--orange);
+    }
+
+    .why-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+    }
+
+    .why-num {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: rgba(200, 96, 26, 0.12);
+      line-height: 1;
+      margin-bottom: 0.8rem;
+    }
+
+    .why-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .why-desc {
+      font-size: 0.75rem;
+      color: var(--mid);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    /* ── 프로세스 ── */
+    .process {
+      padding: 6rem 3rem;
+      background: var(--navy);
+    }
+
+    .process .section-eyebrow {
+      color: var(--gold);
+    }
+
+    .process .section-title {
+      color: white;
+    }
+
+    .process .section-sub {
+      color: rgba(255, 255, 255, 0.3);
+    }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .process-step {
+      text-align: center;
+      padding: 0 0.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .process-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 26px;
+      left: 50%;
+      width: 100%;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.08);
+      z-index: -1;
+    }
+
+    .step-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--navy);
+      border: 1px solid rgba(200, 96, 26, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .process-step:hover .step-circle {
+      background: var(--orange);
+      border-color: var(--orange);
+    }
+
+    .process-step:hover .step-circle svg {
+      stroke: white;
+    }
+
+    .step-name {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.3rem;
+    }
+
+    .step-desc {
+      font-size: 0.62rem;
+      color: rgba(255, 255, 255, 0.28);
+      line-height: 1.6;
+    }
+
+    /* ── CTA ── */
+    .cta {
+      padding: 5rem 3rem;
+      background: var(--cream);
+    }
+
+    .cta-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .cta-tag {
+      font-size: 0.6rem;
+      letter-spacing: 0.22em;
+      color: var(--orange);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 0.7rem;
+    }
+
+    .cta-title {
+      font-family: 'Noto Serif KR', serif;
+      font-size: clamp(1.3rem, 2vw, 1.7rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.5;
+    }
+
+    .cta-title em {
+      font-style: normal;
+      color: var(--orange);
+    }
+
+    .cta-btns {
+      display: flex;
+      gap: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .btn-call {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--orange);
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 1rem 2rem;
+      border: none;
+      cursor: pointer;
+      font-family: 'Noto Sans KR', sans-serif;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .btn-call:hover {
+      background: var(--orange2);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(200, 96, 26, 0.3);
+    }
+
+    .btn-navy {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--navy);
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 1rem 1.8rem;
+      border: none;
+      cursor: pointer;
+      font-family: 'Noto Sans KR', sans-serif;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+
+    .btn-navy:hover {
+      background: var(--navy2);
+      transform: translateY(-2px);
+    }
+
+    /* ── 플로팅 ── */
+    .floating {
+      position: fixed;
+      right: 1.5rem;
+      bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      z-index: 50;
+    }
+
+    .float-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      text-decoration: none;
+    }
+
+    .float-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .float-btn.call {
+      background: var(--orange);
+    }
+
+    .float-btn.call:hover {
+      background: var(--orange2);
+    }
+
+    .float-btn.map {
+      background: #03c75a;
+    }
+
+    .float-btn.map:hover {
+      background: #02b350;
+    }
+
+    /* ── 푸터 ── */
+    footer {
+      background: #111826;
+      padding: 2.5rem 3rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .footer-logo {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-logo span {
+      color: var(--orange);
+    }
+
+    .footer-sub {
+      font-size: 0.6rem;
+      color: rgba(255, 255, 255, 0.2);
+      letter-spacing: 0.1em;
+    }
+
+    .footer-info {
+      font-size: 0.63rem;
+      color: rgba(255, 255, 255, 0.22);
+      line-height: 2;
+      text-align: right;
+    }
+
+    .watermark {
+      text-align: center;
+      padding: 0.8rem;
+      font-size: 0.55rem;
+      letter-spacing: 0.2em;
+      color: var(--light);
+      background: var(--cream2);
+    }
+
+    /* ── 반응형 ── */
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+      }
+
+      .hero-right {
+        border-left: none;
+        border-top: 1px solid var(--border);
+        padding: 4rem 2rem;
+      }
+
+      .hero-left {
+        padding: 4rem 2rem;
+        min-height: auto;
+      }
+
+      .work-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+      }
+
+      .process-steps::before {
+        display: none;
+      }
+
+      .cta-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .cta-btns {
+        justify-content: center;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+
+      .footer-info {
+        text-align: left;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .service-btns {
+        grid-template-columns: 1fr;
+      }
+
+      .work-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-steps {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-left {
+        padding: 3rem 1.5rem;
+      }
+
+      .works,
+      .why,
+      .process,
+      .cta {
+        padding: 4rem 1.5rem;
+      }
+
+      footer {
+        padding: 2rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        인천 남동구 · 13년 전문 경력
+      </div>
+      <h1 class="hero-title">
+        케이링크<br>행정사사무소는<br>마음과 마음을<br>연결합니다.
+      </h1>
+      <p class="hero-desc">
+        토지 보상부터 행정심판 청구 대행까지<br>
+        13년의 현장 경험과 노하우로<br>
+        의뢰인의 권리를 지켜드립니다.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#works" class="btn-hero-secondary"
+          onclick="document.querySelector('.works').scrollIntoView({behavior: 'smooth'})">
+          업무 안내
+        </a>
+        <a href="tel:01086995521" class="btn-hero-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z" />
+          </svg>
+          상담 전화 연결
+        </a>
+      </div>
+
+
+    </div>
+
+    <div class="hero-right">
+      <div class="hero-bg-text">13</div>
+      <div class="right-eyebrow">
+        <div class="right-eyebrow-line"></div>
+        주요 서비스
+      </div>
+
+      <div class="service-grid">
+        <a href="tel:01086995521" class="s-card">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+          </svg>
+          <div class="s-card-title">토지 · 지장물 · 영업보상</div>
+          <div class="s-card-desc">토지수용·지장물 보상·영업손실 보상 대리 및 협의</div>
+        </a>
+        <a href="tel:01086995521" class="s-card">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+          </svg>
+          <div class="s-card-title">출입국 · 비자(VISA)</div>
+          <div class="s-card-desc">외국인등록·Visa 신청·연장·변경 체류 관련 전반 대리</div>
+        </a>
+        <a href="tel:01086995521" class="s-card">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+          </svg>
+          <div class="s-card-title">행정심판 청구 대행</div>
+          <div class="s-card-desc">행정 불복 절차 및 행정심판 청구 전반 대리</div>
+        </a>
+        <a href="tel:01086995521" class="s-card">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+          </svg>
+          <div class="s-card-title">인허가 등록 대리</div>
+          <div class="s-card-desc">각종 영업신고·인허가 등록 대리 및 컨설팅</div>
+        </a>
+      </div>
+
+      <div class="stats-row" style="border: none; gap: 1px; background: var(--border);">
+        <div class="stat-item" style="padding: 1.5rem 0.5rem; background: rgba(200, 96, 26, 0.08); display: flex; align-items: center; justify-content: center;">
+          <div style="font-size: 0.95rem; font-weight: 700; color: var(--navy);">13년 <span style="color: var(--orange);">전문 경력</span></div>
+        </div>
+        <div class="stat-item" style="padding: 1.5rem 0.5rem; background: var(--navy); display: flex; align-items: center; justify-content: center;">
+          <div style="font-size: 0.95rem; font-weight: 700; color: white; line-height: 1.4;">대한행정사회<br>정회원</div>
+        </div>
+        <div class="stat-item" style="padding: 1.5rem 0.5rem; background: var(--orange); display: flex; align-items: center; justify-content: center;">
+          <div style="font-size: 0.95rem; font-weight: 700; color: white; line-height: 1.4;">수용지구<br>대책위원회 자문</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 업무분야 -->
+  <section class="works">
+    <div class="section-header">
+      <div class="section-eyebrow">Service Area</div>
+      <h2 class="section-title">전문 <em>업무 분야</em></h2>
+      <p class="section-sub">복잡한 행정 절차, 케이링크 행정사사무소가 직접 처리해드립니다</p>
+    </div>
+    <div class="work-grid">
+      <div class="work-card">
+        <div class="work-icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C8601A" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+            <polyline points="9 22 9 12 15 12 15 22" />
+          </svg>
+        </div>
+        <div class="work-name">토지 · 지장물 · 영업보상</div>
+        <div class="work-desc">토지수용·지장물 보상·영업손실 보상 대리 및 협의</div>
+      </div>
+      <div class="work-card">
+        <div class="work-icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C8601A" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="2" y1="12" x2="22" y2="12" />
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+          </svg>
+        </div>
+        <div class="work-name">출입국 · 비자(VISA)</div>
+        <div class="work-desc">외국인등록·Visa 신청·연장·변경 체류 관련 전반 대리</div>
+      </div>
+      <div class="work-card">
+        <div class="work-icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C8601A" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="16" y1="13" x2="8" y2="13" />
+            <line x1="16" y1="17" x2="8" y2="17" />
+          </svg>
+        </div>
+        <div class="work-name">행정심판 청구 대행</div>
+        <div class="work-desc">행정 불복 절차 및 행정심판 청구 전반 대리</div>
+      </div>
+      <div class="work-card">
+        <div class="work-icon-wrap">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#C8601A" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" />
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+          </svg>
+        </div>
+        <div class="work-name">인허가 등록 대리</div>
+        <div class="work-desc">각종 영업신고·인허가 등록 대리 및 컨설팅</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY 케이링크 -->
+  <section class="why">
+    <div class="section-header">
+      <div class="section-eyebrow">Why K-Link</div>
+      <h2 class="section-title">케이링크를 <em>선택하는 이유</em></h2>
+      <p class="section-sub">13년 경력의 공인 행정사가 직접 처리합니다</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-num">01</div>
+        <div class="why-title">13년 현장 경험</div>
+        <div class="why-desc">오랜 실무 경험으로 복잡한 행정 절차도 정확하고 빠르게 처리합니다.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">02</div>
+        <div class="why-title">처음부터 끝까지 직접</div>
+        <div class="why-desc">대표 행정사가 상담부터 완료까지 직접 담당합니다. 중간에 담당자가 바뀌지 않습니다.</div>
+      </div>
+      <div class="why-card">
+        <div class="why-num">03</div>
+        <div class="why-title">투명한 진행 공유</div>
+        <div class="why-desc">진행 상황을 실시간으로 안내해드립니다. 궁금한 점은 언제든지 문의하세요.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 프로세스 -->
+  <section class="process">
+    <div class="section-header">
+      <div class="section-eyebrow">Process</div>
+      <h2 class="section-title">상담부터 완료까지<br><em>5단계 프로세스</em></h2>
+      <p class="section-sub">복잡한 절차 없이 투명하게 진행합니다</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-circle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(184,149,106,0.8)" stroke-width="1.5">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+        </div>
+        <div class="step-name">무료 상담</div>
+        <div class="step-desc">전화·방문으로 요건 파악</div>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(184,149,106,0.8)" stroke-width="1.5">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+          </svg>
+        </div>
+        <div class="step-name">서류 검토</div>
+        <div class="step-desc">필요 서류 안내 및 준비</div>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(184,149,106,0.8)" stroke-width="1.5">
+            <polyline points="9 11 12 14 22 4" />
+            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+          </svg>
+        </div>
+        <div class="step-name">신청 대리</div>
+        <div class="step-desc">행정기관 직접 제출</div>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(184,149,106,0.8)" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+        </div>
+        <div class="step-name">진행 공유</div>
+        <div class="step-desc">처리 현황 실시간 안내</div>
+      </div>
+      <div class="process-step">
+        <div class="step-circle">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(184,149,106,0.8)" stroke-width="1.5">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+            <polyline points="22 4 12 14.01 9 11.01" />
+          </svg>
+        </div>
+        <div class="step-name">완료 확인</div>
+        <div class="step-desc">결과 전달 및 사후 관리</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="cta-inner">
+      <div>
+        <div class="cta-tag">지금 바로 문의하세요</div>
+        <div class="cta-title">행정 절차가 복잡하신가요?<br><em>무료 상담 받아보세요</em></div>
+      </div>
+      <div class="cta-btns">
+        <a href="tel:01086995521" class="btn-call">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z" />
+          </svg>
+          상담 전화 연결
+        </a>
+        <a href="tel:01086995521" class="btn-navy">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+          010-8699-5521
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 플로팅 -->
+  <div class="floating">
+    <a href="tel:01086995521" class="float-btn call" title="전화상담">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+        <path
+          d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.5a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z" />
+      </svg>
+    </a>
+    <a href="sms:01086995521" class="float-btn" title="문자상담">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+      </svg>
+    </a>
+    <a href="https://naver.me/x7eyK2mk" target="_blank" rel="noopener noreferrer" class="float-btn map" title="오시는 길">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+        <circle cx="12" cy="10" r="3" />
+      </svg>
+    </a>
+  </div>
+
+  <!-- 푸터 -->
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo"><span>K-LinK</span> 케이링크 행정사사무소</div>
+        <div class="footer-sub">13년 전문 경력 / 대한행정사회 정회원 / 수용지구 대책위원회 자문</div>
+      </div>
+      <div class="footer-info">
+        대표 행정사 김정규 · 사업자번호 886-26-01330<br>
+        인천광역시 남동구 인주대로 846, 가호동 302호<br>
+        T. 032-461-0214 · M. 010-8699-5521 · <a href="/cdn-cgi/l/email-p
