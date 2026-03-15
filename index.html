@@ -654,6 +654,131 @@
       transform: translateY(-2px);
     }
 
+    /* ── PROFILE ── */
+    .profile {
+      padding: 8rem 3rem;
+      background: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .profile-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 5rem;
+    }
+
+    .profile-image-area {
+      flex: 1;
+      position: relative;
+    }
+
+    .profile-image-area::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 1px solid var(--border);
+      top: 20px;
+      left: 20px;
+      z-index: 1;
+    }
+
+    .profile-img-box {
+      position: relative;
+      z-index: 2;
+      background: var(--cream2);
+      overflow: hidden;
+      aspect-ratio: 3 / 4;
+    }
+
+    .profile-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .profile-info-area {
+      flex: 1.2;
+    }
+
+    .profile-tag {
+      font-size: 0.85rem;
+      color: var(--orange);
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.1em;
+    }
+
+    .profile-name-wrap {
+      margin-bottom: 2.5rem;
+    }
+
+    .profile-name-main {
+      font-family: 'Noto Serif KR', serif;
+      font-size: 2.6rem;
+      color: var(--navy);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .profile-name-main span {
+      font-size: 1.2rem;
+      font-family: 'Noto Sans KR', sans-serif;
+      color: var(--mid);
+      font-weight: 400;
+      margin-left: 0.5rem;
+    }
+
+    .profile-career-list {
+      list-style: none;
+    }
+
+    .profile-career-item {
+      position: relative;
+      padding-left: 1.8rem;
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+      color: var(--navy2);
+      line-height: 1.6;
+    }
+
+    .profile-career-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.7rem;
+      width: 12px;
+      height: 1px;
+      background: var(--orange);
+    }
+
+    .profile-career-item strong {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    @media (max-width: 900px) {
+      .profile {
+        padding: 5rem 2rem;
+      }
+      .profile-container {
+        flex-direction: column;
+        gap: 3.5rem;
+      }
+      .profile-image-area {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      .profile-name-main {
+        font-size: 2.2rem;
+      }
+    }
+
     /* ── 플로팅 ── */
     .floating {
       position: fixed;
@@ -885,26 +1010,26 @@
       </div>
 
       <div class="service-grid">
-        <a href="tel:01086995521" class="s-card">
+        <div class="s-card">
           <div class="s-card-emoji">🏢</div>
           <div class="s-card-title">토지 · 지장물 · 영업보상</div>
           <div class="s-card-desc">토지수용·지장물 보상·영업손실 보상 대리 및 협의</div>
-        </a>
-        <a href="tel:01086995521" class="s-card">
+        </div>
+        <div class="s-card">
           <div class="s-card-emoji">🛂</div>
           <div class="s-card-title">출입국 · 비자(VISA)</div>
           <div class="s-card-desc">외국인등록·Visa 신청·연장·변경 체류 관련 전반 대리</div>
-        </a>
-        <a href="tel:01086995521" class="s-card">
+        </div>
+        <div class="s-card">
           <div class="s-card-emoji">⚖️</div>
           <div class="s-card-title">행정심판 청구 대행</div>
           <div class="s-card-desc">행정 불복 절차 및 행정심판 청구 전반 대리</div>
-        </a>
-        <a href="tel:01086995521" class="s-card">
+        </div>
+        <div class="s-card">
           <div class="s-card-emoji">📝</div>
           <div class="s-card-title">인허가 등록 대리</div>
           <div class="s-card-desc">각종 영업신고·인허가 등록 대리 및 컨설팅</div>
-        </a>
+        </div>
       </div>
 
       <div class="stats-row" style="border: none; gap: 1px; background: var(--border);">
@@ -917,6 +1042,31 @@
         <div class="stat-item" style="padding: 1.5rem 0.5rem; background: var(--orange); display: flex; align-items: center; justify-content: center;">
           <div style="font-size: 0.95rem; font-weight: 700; color: white; line-height: 1.4;">수용지구<br>대책위원회 자문</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 프로필 -->
+  <section class="profile">
+    <div class="profile-container">
+      <div class="profile-image-area">
+        <div class="profile-img-box">
+          <img src="images/profile.png" alt="대표 행정사 김정규">
+        </div>
+      </div>
+      <div class="profile-info-area">
+        <div class="profile-tag">Profile</div>
+        <div class="profile-name-wrap">
+          <h2 class="profile-name-main">김정규<span>대표 행정사</span></h2>
+        </div>
+        <ul class="profile-career-list">
+          <li class="profile-career-item"><strong>현)</strong> 대한행정사회 정회원</li>
+          <li class="profile-career-item"><strong>현)</strong> 수용지구 대책위원회 자문</li>
+          <li class="profile-career-item">공동주택 건축감리 근무</li>
+          <li class="profile-career-item">토목 및 건축기사 자격 보유</li>
+          <li class="profile-career-item">일반행정사 국가전문자격시험 합격</li>
+          <li class="profile-career-item">법무부 등록 출입국 민원 대행기관</li>
+        </ul>
       </div>
     </div>
   </section>
