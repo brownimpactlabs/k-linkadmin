@@ -89,9 +89,9 @@
     }
 
     .hero-desc {
-      font-size: 0.95rem;
-      color: rgba(255, 255, 255, 0.5);
-      line-height: 1.9;
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.55);
+      line-height: 1.8;
       font-weight: 300;
       border-left: 2px solid var(--orange);
       padding-left: 1.5rem;
@@ -252,16 +252,16 @@
     }
 
     .s-card-title {
-      font-size: 1rem;
+      font-size: 1.15rem;
       font-weight: 700;
       color: var(--navy);
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.8rem;
     }
 
     .s-card-desc {
-      font-size: 0.75rem;
+      font-size: 0.9rem;
       color: var(--mid);
-      line-height: 1.6;
+      line-height: 1.7;
       font-weight: 300;
     }
 
@@ -332,11 +332,11 @@
 
     .section-title {
       font-family: 'Noto Serif KR', serif;
-      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-size: clamp(1.6rem, 2.8vw, 2.2rem);
       font-weight: 700;
       color: var(--navy);
-      line-height: 1.45;
-      margin-bottom: 0.7rem;
+      line-height: 1.4;
+      margin-bottom: 1rem;
     }
 
     .section-title em {
@@ -345,7 +345,7 @@
     }
 
     .section-sub {
-      font-size: 0.83rem;
+      font-size: 0.95rem;
       color: var(--mid);
       line-height: 1.8;
       font-weight: 300;
@@ -415,15 +415,15 @@
     }
 
     .work-name {
-      font-size: 0.88rem;
+      font-size: 1.05rem;
       font-weight: 700;
       color: var(--navy);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
       line-height: 1.4;
     }
 
     .work-desc {
-      font-size: 0.7rem;
+      font-size: 0.85rem;
       color: var(--mid);
       line-height: 1.7;
       font-weight: 300;
@@ -837,37 +837,32 @@
 
     /* ── 푸터 ── */
     footer {
-      background: #111826;
-      padding: 2.5rem 3rem;
+      background: var(--cream2);
+      padding: 4rem 3rem;
+      border-top: 1px solid var(--border);
     }
 
     .footer-inner {
       max-width: 1100px;
       margin: 0 auto;
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: space-between;
       gap: 2rem;
     }
 
     .footer-logo img {
-      height: 60px;
+      height: 90px;
       width: auto;
-      margin-bottom: 1.2rem;
       display: block;
     }
 
-    .footer-sub {
-      font-size: 0.85rem;
-      color: rgba(255, 255, 255, 0.4);
-      letter-spacing: 0.05em;
-    }
-
     .footer-info {
-      font-size: 0.95rem;
-      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.82rem;
+      color: var(--mid);
       line-height: 1.8;
       text-align: right;
+      font-weight: 400;
     }
 
     .watermark {
@@ -1260,11 +1255,8 @@
   <!-- 푸터 -->
   <footer>
     <div class="footer-inner">
-      <div>
-        <div class="footer-logo">
-          <img src="images/footer-logo.png" alt="K-LinK 케이링크 행정사사무소">
-        </div>
-        <div class="footer-sub">13년 전문 경력 / 대한행정사회 정회원 / 수용지구 대책위원회 자문</div>
+      <div class="footer-logo">
+        <img src="images/footer-logo.png" alt="K-LinK 케이링크 행정사사무소">
       </div>
       <div class="footer-info">
         대표 행정사 김정규 · 사업자번호 886-26-01330<br>
